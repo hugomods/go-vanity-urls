@@ -1,0 +1,29 @@
+{
+  "name": "@hugomods/go-vanity-urls",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugomods/go-vanity-urls.git"
+  },
+  "author": "Razon Yang <razonyang@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hugomods/go-vanity-urls/issues"
+  },
+  "homepage": "https://github.com/hugomods/go-vanity-urls",
+  "devDependencies": {
+    "@hugomods/eslint-config": "^0.1.0",
+    "@hugomods/prettier-config": "^0.2.0",
+    "@hugomods/stylelint-config": "^0.1.1"
+  },
+  "scripts": {
+    "lint": "npm run lint:prettier",
+    "lint:fix": "npm run lint:prettier:fix && npm run lint:style:fix && npm run lint:eslint:fix",
+    "lint:prettier": "prettier . --check",
+    "lint:prettier:fix": "prettier . -w",
+    "lint:eslint": "eslint .",
+    "lint:eslint:fix": "eslint --fix .",
+    "lint:style": "stylelint \"**/*.scss\"",
+    "lint:style:fix": "stylelint \"**/*.scss\" --fix"
+  },
+  "prettier": "@hugomods/prettier-config"
+}

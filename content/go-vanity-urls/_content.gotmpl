@@ -1,0 +1,28 @@
+{{ with index site.Data "go-vanity-urls" }}
+  {{ $params := site.Params.go_vanity_urls }}
+  {{ $host := default "" $params.host }}
+  {{ if not $host }}
+    {{ $url := absURL "/" | urls.Parse }}
+    {{ $host = $url.Host }}
+  {{ end }}
+  {{ range $path, $mod := . }}
+    {{ $repo := strings.TrimSuffix "/" $mod.repo }}
+    {{ $vcs := default $params.vcs $mod.vcs }}
+    {{ $path = strings.Trim $path "/" }}
+    {{ $import := printf "%s/%s" $host $path }}
+    {{ $pagePath := printf "../%s" $path }}
+    {{ $params := dict
+      "repo" $repo
+      "vcs" $vcs
+      "import" $import
+    }}
+    {{ $page := dict
+      "kind" "page"
+      "layout" "go-vanity-url"
+      "path" $pagePath
+      "title" $import
+      "params" $params
+    }}
+    {{ $.AddPage $page }}
+  {{ end }}
+{{ end }}

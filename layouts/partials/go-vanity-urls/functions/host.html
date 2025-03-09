@@ -1,0 +1,6 @@
+{{ $host := default "" site.Params.go_vanity_urls.host }}
+{{ if not $host }}
+  {{ $url := absURL "/" | urls.Parse }}
+  {{ $host = $url.Host }}
+{{ end }}
+{{ return $host }}

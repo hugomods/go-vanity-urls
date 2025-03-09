@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/hugomods/go-vanity-urls/compare/v0.1.1...v0.2.0) (2025-03-09)
+
+
+### Features ✨
+
+* add statc/_redirects ([68819b0](https://github.com/hugomods/go-vanity-urls/commit/68819b04d294fc84dfd9e1434c86ccb526b5619d))
+
 ## [0.1.1](https://github.com/hugomods/go-vanity-urls/compare/v0.1.0...v0.1.1) (2025-03-05)
 
 
